@@ -17,9 +17,10 @@ CATEGORIES = [
 
 @st.cache_resource(show_spinner=False)
 def load_model():
-    checkpoint = "./tagger_model"
+    checkpoint = "Tranformer/article-tagger"
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     model = RobertaForSequenceClassification.from_pretrained(checkpoint)
+
     model.eval()
     return model, tokenizer
 
